@@ -512,15 +512,17 @@ export default function ChatPage() {
   return (
     <div className={`min-h-screen flex flex-col transition-colors duration-500 ${darkMode ? "bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526]" : "bg-gradient-to-br from-blue-200 via-pink-100 to-purple-200"}`}>
       {/* Top bar */}
-      <div className="flex items-center justify-between p-4 md:p-6">
-        <div className="flex items-center gap-2">
-          {/* Option 1: Text Logo (Current) */}
-          <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-400 to-purple-500">
+      <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+        <div className="flex items-center space-x-3">
+          {/* Option 1: Text Logo */}
+          {/* <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
             Qonvoo
-          </div>
+          </div> */}
           
-          {/* Option 2: Image Logo (Uncomment and replace with your logo) */}
-          {/* <Image src="/qonvoo-logo.svg" alt="Qonvoo Logo" width={40} height={16} className="dark:invert" /> */}
+          {/* Option 2: Image Logo (Your Logo) */}
+          <Image src="/qonvoo-logo.png" alt="Qonvoo Logo" width={40} height={16} className="dark:invert" />
+          
+          <div className="text-sm text-gray-500 dark:text-gray-400">• Global Chat</div>
         </div>
         <div className="flex items-center gap-4">
           <span className="px-3 py-1 rounded-full glass text-sm font-medium shadow-md">{usersOnline} Users Online Now</span>

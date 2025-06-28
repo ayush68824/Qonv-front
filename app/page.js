@@ -45,12 +45,12 @@ export default function Login() {
       <div className="flex flex-col items-center gap-8 w-full max-w-xs p-8 rounded-3xl shadow-2xl bg-white/60 dark:bg-black/40 backdrop-blur-lg border border-white/30 dark:border-black/30">
         <div className="flex flex-col items-center">
           {/* Option 1: Text Logo (Current) */}
-          <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-400 to-purple-500 mb-2">
+          {/* <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-400 to-purple-500 mb-2">
             Qonvoo
-          </div>
+          </div> */}
           
-          {/* Option 2: Image Logo (Uncomment and replace with your logo) */}
-          {/* <Image src="/qonvoo-logo.svg" alt="Qonvoo Logo" width={120} height={40} className="mb-2" /> */}
+          {/* Option 2: Image Logo (Your Logo) */}
+          <Image src="/qonvoo-logo.png" alt="Qonvoo Logo" width={120} height={40} className="mb-2" />
           
           <div className="text-sm text-gray-500 dark:text-gray-400">Connect with strangers worldwide</div>
         </div>
