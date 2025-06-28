@@ -514,64 +514,17 @@ export default function ChatPage() {
       {/* Top bar */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
         <div className="flex items-center space-x-3">
-          {/* Option 1: Text Logo */}
-          {/* <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
-            Qonvoo
-          </div> */}
-          
-          {/* Option 2: Image Logo (Your Logo) */}
-          <Image src="/qonvoo-logo.png" alt="Qonvoo Logo" width={40} height={16} className="dark:invert" />
-          
-          <div className="text-sm text-gray-500 dark:text-gray-400">• Global Chat</div>
+          <Image src="/qonvoo-logo.png" alt="Qonvoo Logo" width={100} height={40} className="dark:invert" />
+          <div className="text-lg text-gray-900 dark:text-gray-400">• Global Chat</div>
         </div>
         <div className="flex items-center gap-4">
-          <span className="px-3 py-1 rounded-full glass text-sm font-medium shadow-md">{usersOnline} Users Online Now</span>
-          <button onClick={() => setShowAnalytics(!showAnalytics)} className="px-3 py-1 rounded-full glass text-sm font-medium shadow-md hover:scale-105 transition-transform">
-            📊 Analytics
-          </button>
+          <span className="px-3 py-1 rounded-full glass text-sm font-medium shadow-md text-gray-900 dark:text-gray-100">{usersOnline} Users Online Now</span>
           <button onClick={handleToggle} className="p-2 rounded-full shadow-lg bg-white/70 dark:bg-black/40 backdrop-blur hover:scale-110 transition-transform">
             {darkMode ? <span role="img" aria-label="Light mode">🌞</span> : <span role="img" aria-label="Dark mode">🌙</span>}
           </button>
           <button onClick={handleLogout} className="ml-2 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-500 via-pink-400 to-purple-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform">Logout</button>
         </div>
       </div>
-
-      {/* Analytics Dashboard */}
-      {showAnalytics && analytics && (
-        <div className="absolute top-20 right-4 z-50 w-80 glass p-4 rounded-xl shadow-xl">
-          <h3 className="text-lg font-bold mb-3 text-gray-800 dark:text-gray-100">📊 Live Analytics</h3>
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between">
-              <span>Total Users:</span>
-              <span className="font-semibold">{analytics.totalUsers}</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Total Messages:</span>
-              <span className="font-semibold">{analytics.totalMessages}</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Media Uploads:</span>
-              <span className="font-semibold">{analytics.totalMediaUploads}</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Total Calls:</span>
-              <span className="font-semibold">{analytics.totalCalls}</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Active Connections:</span>
-              <span className="font-semibold">{analytics.activeConnections}</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Peak Users:</span>
-              <span className="font-semibold">{analytics.peakConcurrentUsers}</span>
-            </div>
-            <div className="flex justify-between">
-              <span>Uptime:</span>
-              <span className="font-semibold">{Math.floor(analytics.uptime / 60)}m</span>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Video Call Interface */}
       {isInCall && (

@@ -42,35 +42,28 @@ export default function Login() {
           )}
         </button>
       </div>
-      <div className="flex flex-col items-center gap-8 w-full max-w-xs p-8 rounded-3xl shadow-2xl bg-white/60 dark:bg-black/40 backdrop-blur-lg border border-white/30 dark:border-black/30">
+      <div className="flex flex-col items-center gap-8 w-full max-w-md p-12 rounded-3xl shadow-2xl bg-white/80 dark:bg-black/40 backdrop-blur-lg border border-white/30 dark:border-black/30">
         <div className="flex flex-col items-center">
-          {/* Option 1: Text Logo (Current) */}
-          {/* <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-pink-400 to-purple-500 mb-2">
-            Qonvoo
-          </div> */}
-          
-          {/* Option 2: Image Logo (Your Logo) */}
-          <Image src="/qonvoo-logo.png" alt="Qonvoo Logo" width={120} height={40} className="mb-2" />
-          
-          <div className="text-sm text-gray-500 dark:text-gray-400">Connect with strangers worldwide</div>
+          <Image src="/qonvoo-logo.png" alt="Qonvoo Logo" width={200} height={80} className="mb-4" />
+          <div className="text-base text-gray-700 dark:text-gray-400">Connect with strangers worldwide</div>
         </div>
-        <h1 className="text-3xl font-bold text-center text-gray-800 dark:text-gray-100 tracking-tight mb-4">Welcome Back</h1>
+        <h1 className="text-4xl font-bold text-center text-gray-900 dark:text-gray-100 tracking-tight mb-4">Welcome Back</h1>
         <form onSubmit={handleLogin} className="flex flex-col gap-4 w-full">
           <input
             type="text"
             placeholder="Enter your username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="px-4 py-3 rounded-xl bg-white/80 dark:bg-black/30 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400 text-lg shadow-inner"
+            className="px-4 py-3 rounded-xl bg-white/90 dark:bg-black/30 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400 text-lg shadow-inner text-gray-900 dark:text-gray-100"
             required
             maxLength={20}
             autoFocus
           />
           <button
             type="submit"
-            className="mt-2 py-3 rounded-xl bg-gradient-to-r from-blue-500 via-pink-400 to-purple-500 text-white font-semibold text-lg shadow-lg hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400"
+            className="mt-2 py-2 rounded-xl bg-gradient-to-r from-blue-500 via-pink-400 to-purple-500 text-white font-semibold text-xl shadow-lg hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400 tracking-wide"
           >
-            Login
+            Start Chatting
           </button>
         </form>
       </div>
