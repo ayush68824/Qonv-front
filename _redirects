@@ -1,0 +1,10 @@
+# Netlify redirects for Next.js app
+# Handle client-side routing
+/*    /index.html   200
+
+# API routes (if any)
+/api/*  https://qonv-back.onrender.com/api/:splat  200
+
+# Static assets
+/_next/static/*  /_next/static/:splat  200
+/public/*  /public/:splat  200 
