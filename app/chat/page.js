@@ -40,6 +40,7 @@ export default function ChatPage() {
   const remoteStreamRef = useRef(null);
   const callTimerRef = useRef(null);
   const [isRecording, setIsRecording] = useState(false);
+  const [showWelcomeModal, setShowWelcomeModal] = useState(true);
 
   // Load username from localStorage
   useEffect(() => {
@@ -511,6 +512,33 @@ export default function ChatPage() {
 
   return (
     <div className={`min-h-screen flex flex-col transition-colors duration-500 ${darkMode ? "bg-gradient-to-br from-[#0f2027] via-[#2c5364] to-[#232526]" : "bg-gradient-to-br from-blue-200 via-pink-100 to-purple-200"}`}>
+      {/* Welcome/Instruction Popup Modal */}
+      {showWelcomeModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+          <div className="glass max-w-md w-full p-6 rounded-2xl shadow-2xl text-center relative">
+            <button
+              className="absolute top-3 right-3 text-2xl text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 focus:outline-none"
+              onClick={() => setShowWelcomeModal(false)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <h2 className="text-2xl font-bold mb-2 text-gray-900 dark:text-gray-100">Welcome to Qonvoo!</h2>
+            <p className="mb-4 text-gray-700 dark:text-gray-300">
+              You’re about to connect and chat with new people from around the world.<br/>
+              <span className="font-semibold">Please be kind, respectful, and considerate in your conversations.</span><br/>
+              Avoid using inappropriate language, and always treat others with dignity and respect.<br/>
+              <span className="font-semibold">Remember, your words matter—let’s make this a safe and friendly space for everyone!</span>
+            </p>
+            <button
+              className="mt-2 px-6 py-2 rounded-xl bg-gradient-to-r from-blue-500 via-pink-400 to-purple-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform"
+              onClick={() => setShowWelcomeModal(false)}
+            >
+              Got it!
+            </button>
+          </div>
+        </div>
+      )}
       {/* Top bar */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
         <div className="flex items-center space-x-3">
@@ -596,8 +624,8 @@ export default function ChatPage() {
       )}
 
       {/* Chat box */}
-      <div className="flex-1 flex flex-col items-center justify-center px-2 md:px-0">
-        <div className="w-full max-w-2xl h-[60vh] md:h-[70vh] glass overflow-y-auto p-4 rounded-2xl shadow-xl mb-4 transition-all" ref={chatRef}>
+      <div className="flex-1 flex flex-col items-center justify-center w-full px-1 sm:px-2 md:px-0">
+        <div className="w-full max-w-2xl h-[45vh] sm:h-[60vh] md:h-[70vh] glass overflow-y-auto p-2 sm:p-4 rounded-2xl shadow-xl mb-4 transition-all" ref={chatRef}>
           {messages.length === 0 && (
             <div className="flex flex-col items-center justify-center h-full text-gray-400 animate-pulse">Connecting...</div>
           )}
@@ -639,7 +667,7 @@ export default function ChatPage() {
         )}
 
         {/* Message input area */}
-        <div className="flex items-center gap-2 w-full max-w-2xl">
+        <div className="flex flex-wrap items-center gap-2 w-full max-w-2xl">
           <button onClick={() => setShowEmoji((v) => !v)} className="p-2 bg-white/80 dark:bg-black/30 rounded-full shadow hover:scale-110 transition-transform">😊</button>
           {showEmoji && (
             <div className="absolute bottom-24 left-4 bg-white dark:bg-black border rounded-xl p-2 shadow-lg z-10 flex gap-1">
@@ -682,7 +710,7 @@ export default function ChatPage() {
           </button>
           <input
             type="text"
-            className="flex-1 px-4 py-3 rounded-xl bg-white/80 dark:bg-black/30 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400 text-lg shadow-inner"
+            className="flex-1 min-w-[120px] px-2 py-2 sm:px-4 sm:py-3 rounded-xl bg-white/80 dark:bg-black/30 border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400 text-base sm:text-lg shadow-inner"
             placeholder="Type your message..."
             value={input}
             onChange={(e) => setInput(e.target.value)}

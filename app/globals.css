@@ -59,3 +59,68 @@ body {
   50% { opacity: 1; }
   100% { opacity: 0.7; }
 }
+
+/* Responsive improvements for mobile */
+@media (max-width: 600px) {
+  .glass {
+    padding: 1rem !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 16px 0 rgba(31,38,135,0.10) !important;
+  }
+  .neumorph {
+    border-radius: 12px !important;
+  }
+  .max-w-2xl, .max-w-md {
+    max-width: 98vw !important;
+    width: 98vw !important;
+  }
+  .rounded-2xl, .rounded-3xl {
+    border-radius: 12px !important;
+  }
+  .p-12 {
+    padding: 1.5rem !important;
+  }
+  .text-4xl {
+    font-size: 2rem !important;
+  }
+  .text-lg, .text-xl {
+    font-size: 1rem !important;
+  }
+  .py-3, .py-2 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .px-4, .px-5, .px-6 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  .gap-8 {
+    gap: 1rem !important;
+  }
+  .h-\[60vh\], .h-\[70vh\] {
+    height: 45vh !important;
+  }
+  .mb-4 {
+    margin-bottom: 0.75rem !important;
+  }
+  .flex-col.items-center.justify-center {
+    min-height: 100vh !important;
+    padding-bottom: 2rem !important;
+  }
+  .absolute.top-4.right-4 {
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+  }
+  .shadow-2xl, .shadow-xl, .shadow-lg {
+    box-shadow: 0 2px 8px 0 rgba(31,38,135,0.10) !important;
+  }
+  input[type="text"], input[type="file"] {
+    font-size: 1rem !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+  button {
+    font-size: 1rem !important;
+    min-width: 2.5rem !important;
+    min-height: 2.5rem !important;
+  }
+}
